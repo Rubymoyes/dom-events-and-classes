@@ -46,22 +46,33 @@ function hide (evt) {
   updateCounts()
 }
 
-
 //
-
 
 function updateCounts () {
   var totals = {
     blue: 0,
     green: 0,
-    invisible: 0
+    invisible: 0,
   }
   
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
+  // variable, for loop, if/else if.
 
+  var dots = document.getElementsByClassName('board')[0].children;
 
+   for (var i = 0; i < dots.length; i++) {
 
-
+      if (dots[i].classList.contains('blue')) {
+        totals.blue++;
+      } else if (dots[i].classList.contains('green')) {
+        totals.green++;
+      } else if (dots[i].classList.contains('invisible')){
+        totals.invisible++;
+      }
+    }
+// What I would like to do
+// I would like to make the invisible number of dots automatically start at 8, and then lower
+// with each blue or green dot marked. Trying to do that now. :) 
 
 
   // Once you've done the counting, this function will update the display
