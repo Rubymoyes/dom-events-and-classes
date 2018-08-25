@@ -10,10 +10,15 @@ function start () {
 function bindEventListeners (dots) {
   for (var i = 0; i < dots.length; i++) {
     // BIND YOUR EVENT LISTENERS HERE
+
     // The first one is provided for you
     dots[i].addEventListener('contextmenu', makeGreen)
-    // This is the makeBlue event listener, may need tweaking
+
+    // This is the makeBlue event listener
     dots[i].addEventListener('click', makeBlue)
+
+    // event listener for the invisible function
+    dots[i].addEventListener('dblclick', hide)
   }
 }
 
@@ -33,6 +38,17 @@ function makeBlue (evt) {
 }
 
 // CREATE FUNCTION hide HERE
+
+function hide (evt) {
+  // preventDefault may not be necessary.
+  evt.preventDefault()
+  evt.target.classList.toggle('invisible')
+  updateCounts()
+}
+
+
+//
+
 
 function updateCounts () {
   var totals = {
